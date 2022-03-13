@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<meta charset="utf-8">
+<meta name="description" content="Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#00add8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<script src="/js/site.js"></script>
+<title>The Go Programming Language</title>
+</head>
+<body class="Site">
+  
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+<header class="Site-header js-siteHeader">
+  <div class="Header Header--dark">
+    <nav class="Header-nav">
+      <a href="/">
+        <img
+          class="js-headerLogo Header-logo"
+          src="/images/go-logo-white.svg"
+          alt="Go">
+      </a>
+      <div class="Header-rightContent">
+        <ul class="Header-menu">
+          <li class="Header-menuItem ">
+            <a href="/solutions/">Why Go</a>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/learn/">Get Started</a>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/doc/">Docs</a>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="https://pkg.go.dev">Packages</a>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/play/">Play</a>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/blog/">Blog</a>
+          </li>
+        </ul>
+        <button class="Header-navOpen js-headerMenuButton Header-navOpen--white" aria-label="Open navigation.">
+        </button>
+      </div>
+    </nav>
+    
+  </div>
+</header>
+<aside class="NavigationDrawer js-header">
+  <nav class="NavigationDrawer-nav">
+    <div class="NavigationDrawer-header">
+      <a href="/">
+        <img class="NavigationDrawer-logo" src="/images/go-logo-blue.svg" alt="Go.">
+      </a>
+    </div>
+    <ul class="NavigationDrawer-list">
+        <li class="NavigationDrawer-listItem ">
+          <a href="/solutions/">Why Go</a>
+        </li>
+        <li class="NavigationDrawer-listItem ">
+          <a href="/learn/">Get Started</a>
+        </li>
+        <li class="NavigationDrawer-listItem ">
+          <a href="/doc/">Docs</a>
+        </li>
+        <li class="NavigationDrawer-listItem ">
+          <a href="https://pkg.go.dev">Packages</a>
+        </li>
+        <li class="NavigationDrawer-listItem ">
+          <a href="/play/">Play</a>
+        </li>
+        <li class="NavigationDrawer-listItem ">
+          <a href="/blog/">Blog</a>
+        </li>
+    </ul>
+  </nav>
+</aside>
+<div class="NavigationDrawer-scrim js-scrim" role="presentation"></div>
+<main class="SiteContent SiteContent--default">
+  <section class="Hero bluebg">
+  <div class="Hero-gridContainer">
+    <div class="Hero-blurb">
+      <h1>Build fast, reliable, and efficient software at scale</h1>
+      <ul class="Hero-blurbList">
+        <li>
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+          </svg>
+          Go is an open source programming language supported by Google
+        </li>
+        <li>
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+          </svg>
+          Easy to learn and get started with
+        </li>
+        <li>
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+          </svg>
+          Built-in concurrency and a robust standard library
+        </li>
+        <li>
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="white" fill-opacity="0.87">
+          </svg>
+          Growing ecosystem of partners, communities, and tools
+        </li>
+      </ul>
+    </div>
+    <div class="Hero-actions">
+      <div
+        data-version=""
+        class="js-latestGoVersion">
+        <a class="Primary" href="/learn/">Get Started</a>
+        <a class="Secondary js-downloadBtn"
+          href="/dl"
+          target="_blank" rel="noopener"
+          >Download
+        </a>
+      </div>
+      <div class="Hero-footnote">
+        <p>
+          Download packages for
+          <a class="js-downloadWin">Windows 64-bit</a>,
+          <a class="js-downloadMac">macOS</a>,
+          <a class="js-downloadLinux">Linux</a>, and
+          <a href="/dl/">more</a>
+        </p>
+        <p>
+          The <code>go</code> command by default downloads and authenticates
+          modules using the Go module mirror and Go checksum database run by
+          Google. <a href="/dl">Learn more.</a>
+        </p>
+      </div>
+    </div>
+    <div class="Hero-gopher">
+      <img class="Hero-gopherLadder" src="/images/gophers/ladder.svg" alt="Go Gopher climbing a ladder.">
+    </div>
+  </div>
+</section>
+<section class="WhoUses">
+  <div class="WhoUses-gridContainer">
+    <div class="WhoUses-header">
+      <h2 class="WhoUses-headerH2">Companies using Go</h2>
+      <p class="WhoUses-subheader">Organizations in every industry use Go to power their software and services
+        <a href="/solutions/" class="WhoUsesCaseStudyList-seeAll">
+        View all stories
+       </a>
+     </p>
+    </div>
+  <div class="WhoUsesCaseStudyList">
+    <ul class="WhoUsesCaseStudyList-gridContainer">
+        <li class="WhoUsesCaseStudyList-caseStudy">
+          <a href="/solutions/google/" class="WhoUsesCaseStudyList-caseStudyLink">
+            <img
+              loading="lazy"
+              height="48"
+              width="30%"
+              src="/images/logos/google.svg"
+              class="WhoUsesCaseStudyList-logo"
+              alt="">
+            <p>View case study</p>
+          </a>
+        </li>
+        <li class="WhoUsesCaseStudyList-caseStudy">
+          <a href="/solutions/paypal" class="WhoUsesCaseStudyList-caseStudyLink">
+            <img
+              loading="lazy"
+              height="48"
+              width="30%"
+              src="/images/logos/paypal.svg"
+              class="WhoUsesCaseStudyList-logo"
+              alt="">
+            <p>View case study</p>
+          </a>
+        </li>
+        <li class="WhoUsesCaseStudyList-caseStudy">
+          <a href="/solutions/americanexpress" class="WhoUsesCaseStudyList-caseStudyLink">
+            <img
+              loading="lazy"
+              height="48"
+              width="30%"
+              src="/images/logos/american-express.svg"
+              class="WhoUsesCaseStudyList-logo"
+              alt="">
+            <p>View case study</p>
+          </a>
+        </li>
+        <li class="WhoUsesCaseStudyList-caseStudy">
+          <a href="/solutions/mercadolibre" class="WhoUsesCaseStudyList-caseStudyLink">
+            <img
+              loading="lazy"
+              height="48"
+              width="30%"
+              src="/images/logos/mercado-libre.png"
+              class="WhoUsesCaseStudyList-logo"
+              alt="">
+            <p>View case study</p>
+          </a>
+        </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://medium.com/capital-one-tech/a-serverless-and-go-journey-credit-offers-api-74ef1f9fde7f" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/capital-one.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://www.cockroachlabs.com/blog/why-go-was-the-right-choice-for-cockroachdb/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/cockroach.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://blogs.dropbox.com/tech/2014/07/open-sourcing-our-go-libraries/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/dropbox.png"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://blog.cloudflare.com/graceful-upgrades-in-go/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/cloudflare.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://entgo.io/blog/2019/10/03/introducing-ent/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/facebook.png"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://cloudblogs.microsoft.com/opensource/2018/02/21/go-lang-brian-ketelsen-explains-fast-growth/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/microsoft.png"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://medium.com/tech-at-wildlife-studios/pitaya-wildlifes-golang-go-af57865f7a11" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/wildlife.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://medium.com/netflix-techblog/application-data-caching-using-ssds-5bf25df851ef" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/netflix.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://technology.riotgames.com/news/leveraging-golang-game-development-and-operations" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/riotgames.png"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://www.zdnet.com/article/salesforce-why-we-ditched-python-for-googles-go-language-in-einstein-analytics/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/salesforce.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://tech.target.com/infrastructure/2018/06/18/Recommending-GoLang-at-Target.html" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/target.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://blog.twitch.tv/en/2016/07/05/gos-march-to-low-latency-gc-a6fa96f06eb7/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/twitch.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://blog.twitter.com/engineering/en_us/a/2015/handling-five-billion-sessions-a-day-in-real-time.html" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/twitter.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+          <li class="WhoUsesCaseStudyList-caseStudy">
+            <a href="https://eng.uber.com/aresdb/" target="_blank" rel="noopener"
+              class="WhoUsesCaseStudyList-caseStudyLink">
+              <img
+                loading="lazy"
+                height="48"
+                width="30%"
+                src="/images/logos/uber.svg"
+                class="WhoUsesCaseStudyList-logo"
+                alt="">
+            </a>
+          </li>
+    </ul>
+  </div>
+</section>
+<section class="TestimonialsGo">
+  <div class="GoCarousel">
+    <div class="GoCarousel-controlsContainer">
+      <div class="GoCarousel-wrapper">
+        <ul class="js-testimonialsGoQuotes TestimonialsGo-quotes">
+            <li class="TestimonialsGo-quoteGroup GoCarousel-slide" id="quote_slide0">
+              <div class="TestimonialsGo-quoteSingleItem">
+                <div class="TestimonialsGo-quoteSection">
+                  <p class="TestimonialsGo-quote">“At the time, no single team member knew Go, but
+<strong>within a month, everyone was writing in Go</strong> and we were
+building out the endpoints. It was the flexibility, how easy it was to use,
+and the really cool concept behind Go (how Go handles native concurrency,
+garbage collection, and of course safety+speed.) that helped engage us
+during the build. Also, who can beat that cute mascot!”</p>
+                  <div class="TestimonialsGo-author">— Jaime Enrique Garcia Lopez,
+                    <span class="NoWrapSpan">Senior Software Development Manager</span>
+                    <span class="NoWrapSpan"> at Capital One</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="TestimonialsGo-quoteGroup GoCarousel-slide" id="quote_slide1">
+              <div class="TestimonialsGo-quoteSingleItem">
+                <div class="TestimonialsGo-quoteSection">
+                  <p class="TestimonialsGo-quote">"<strong>A small language that compiles fast makes for a happy developer.</strong>
+The Go language is small, compiles really fast, and as a result it lets your
+mind focus on the actual problem and less on the tool you are using to solve
+it. Code, test, debug cycles are so quick that you forget you are not
+working with an interpreted language. Looking at our code, you see
+<strong>less boilerplate and more business logic.</strong>"</p>
+                  <div class="TestimonialsGo-author">— Clayton Coleman,
+                    <span class="NoWrapSpan">Lead Engineer, Open Shift</span>
+                    <span class="NoWrapSpan"> at RedHat</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="TestimonialsGo-quoteGroup GoCarousel-slide" id="quote_slide2">
+              <div class="TestimonialsGo-quoteSingleItem">
+                <div class="TestimonialsGo-quoteSection">
+                  <p class="TestimonialsGo-quote">“<strong>Go has excellent characteristics for scalability and services
+written using it typically have very small memory footprints.</strong>
+Because code is compiled into a single static binary, services can also be
+containerised with ease, making it much simpler to build and deploy. These
+attributes make <strong>Go an ideal choice for companies building
+microservices</strong>, as you can easily deploy into a highly available and
+scalable environment such as Kubernetes.”</p>
+                  <div class="TestimonialsGo-author">— Matt Boyle,
+                    <span class="NoWrapSpan">Lead Software Engineer</span>
+                    <span class="NoWrapSpan"> at Curve</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="TestimonialsGo-quoteGroup GoCarousel-slide" id="quote_slide3">
+              <div class="TestimonialsGo-quoteSingleItem">
+                <div class="TestimonialsGo-quoteSection">
+                  <p class="TestimonialsGo-quote">"In our tightly managed environments where we run Go code,
+<strong>we have seen a CPU reduction of approximately 10%</strong>
+with cleaner and maintainable code."</p>
+                  <div class="TestimonialsGo-author">— Bala Natarajan,
+                    <span class="NoWrapSpan">Sr. Director of Engineering, Developer Experience</span>
+                    <span class="NoWrapSpan"> at PayPal</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="TestimonialsGo-quoteGroup GoCarousel-slide" id="quote_slide4">
+              <div class="TestimonialsGo-quoteSingleItem">
+                <div class="TestimonialsGo-quoteSection">
+                  <p class="TestimonialsGo-quote">"Tooling has always been a problem with our legacy code base... but we have
+ found that Go has excellent tooling, plus built-in testing, benchmarking,
+ and profiling frameworks. It is easy to write efficient and resilient
+ applications. <strong>After working on Go, most of our developers don't want
+ to go back to other languages.</strong>"</p>
+                  <div class="TestimonialsGo-author">— Benjamin Cane,
+                    <span class="NoWrapSpan">Vice President and Principal Engineer</span>
+                    <span class="NoWrapSpan"> at American Express</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="TestimonialsGo-quoteGroup GoCarousel-slide" id="quote_slide5">
+              <div class="TestimonialsGo-quoteSingleItem">
+                <div class="TestimonialsGo-quoteSection">
+                  <p class="TestimonialsGo-quote">"...when a programming language is designed for exactly the environment most
+ of us use right now—scalable, cloud-based servers that are optimized for
+  performance—a lot can go right."</p>
+                  <div class="TestimonialsGo-author">— John Biggs and Ben Popper,
+                    <span class="NoWrapSpan"></span>
+                    <span class="NoWrapSpan"> at Stack Overflow</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+    <button class="js-testimonialsPrev GoCarousel-controlPrev" hidden>
+      <i class="GoCarousel-icon material-icons">navigate_before</i>
+    </button>
+    <button class="js-testimonialsNext GoCarousel-controlNext">
+      <i class="GoCarousel-icon material-icons">navigate_next</i>
+    </button>
+  </div>
+  </div>
+</section>
+<section class="Playground">
+  <div class="Playground-gridContainer">
+    <div class="Playground-headerContainer">
+      <h2 class="HomeSection-header">Try Go</h2>
+    </div>
+    <div class="Playground-inputContainer">
+      <textarea class="Playground-input js-playgroundCodeEl" spellcheck="false" aria-label="Try Go">// You can edit this code!
+// Click here and start typing.
+package main
+import "fmt"
+func main() {
+  fmt.Println("Hello, 世界")
+}</textarea>
+    </div>
+    <div class="Playground-outputContainer js-playgroundOutputEl">
+      <pre class="Playground-output"><noscript>Hello, 世界</noscript></pre>
+    </div>
+    <div class="Playground-controls">
+      <select class="Playground-selectExample js-playgroundToysEl" aria-label="Code examples">
+      <option value="hello.go">Hello, World!</option>
+      <option value="life.go">Conway's Game of Life</option>
+      <option value="fib.go">Fibonacci Closure</option>
+      <option value="peano.go">Peano Integers</option>
+      <option value="pi.go">Concurrent pi</option>
+      <option value="sieve.go">Concurrent Prime Sieve</option>
+      <option value="solitaire.go">Peg Solitaire Solver</option>
+      <option value="tree.go">Tree Comparison</option>
+      </select>
+      <div class="Playground-buttons">
+      <button class="Button Button--primary js-playgroundRunEl Playground-runButton" title="Run this code [shift-enter]">Run</button>
+      <div class="Playground-secondaryButtons">
+        <button class="Button js-playgroundShareEl" title="Share in Go Playground">Share</button>
+        <a class="Button tour" href="/tour/" title="Tour Go from your browser">Tour</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="WhyGo">
+  <div class="WhyGo-gridContainer">
+    <div class="WhyGo-header">
+      <h2 class="WhyGo-headerH2">What’s possible with Go</h2>
+      <h4 class="WhyGo-headerH4">
+        Use Go for a variety of software development purposes
+      </h4>
+    </div>
+    <ul class="WhyGo-reasons">
+        <li class="WhyGo-reason">
+          <div class="WhyGo-reasonDetails">
+            <div class="WhyGo-reasonIcon" role="presentation">
+              <img src="/images/icons/sphere.svg" alt="Sphere">
+            </div>
+            <div class="WhyGo-reasonText">
+              <h3 class="WhyGo-reasonTitle">Cloud &amp; Network Services</h3>
+              <p>
+                With a strong ecosystem of tools and APIs on major cloud providers, it is easier than ever to build services with Go.
+              </p>
+            </div>
+          </div>
+          <div class="WhyGo-reasonFooter">
+            <div class="WhyGo-reasonPackages">
+              <div class="WhyGo-reasonPackagesHeader">
+                <img src="/images/icons/package.svg" alt="Packages.">
+                Popular Packages:
+              </div>
+              <ul class="WhyGo-reasonPackagesList">
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://cloud.google.com/go/home" target="_blank" rel="noopener">
+                      cloud.google.com/go
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://aws.amazon.com/sdk-for-go/" target="_blank" rel="noopener">
+                      aws/client
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/Azure/azure-sdk-for-go" target="_blank" rel="noopener">
+                      Azure/azure-sdk-for-go
+                    </a>
+                  </li>
+              </ul>
+            </div>
+            <div class="WhyGo-reasonLearnMoreLink">
+              <a href="/solutions/cloud/">Learn More <i class="material-icons WhyGo-forwardArrowIcon">arrow_forward</i></a>
+            </div>
+          </div>
+        </li>
+        <li class="WhyGo-reason">
+          <div class="WhyGo-reasonDetails">
+            <div class="WhyGo-reasonIcon" role="presentation">
+              <img src="/images/icons/command-folder.svg" alt="Command Line">
+            </div>
+            <div class="WhyGo-reasonText">
+              <h3 class="WhyGo-reasonTitle">Command-line Interfaces</h3>
+              <p>
+                With popular open source packages and a robust standard library, use Go to create fast and elegant CLIs.
+              </p>
+            </div>
+          </div>
+          <div class="WhyGo-reasonFooter">
+            <div class="WhyGo-reasonPackages">
+              <div class="WhyGo-reasonPackagesHeader">
+                <img src="/images/icons/package.svg" alt="Packages.">
+                Popular Packages:
+              </div>
+              <ul class="WhyGo-reasonPackagesList">
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/spf13/cobra" target="_blank" rel="noopener">
+                      spf13/cobra
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/spf13/viper" target="_blank" rel="noopener">
+                      spf13/viper
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/urfave/cli" target="_blank" rel="noopener">
+                      urfave/cli
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/go-delve/delve" target="_blank" rel="noopener">
+                      delve
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/chzyer/readline" target="_blank" rel="noopener">
+                      chzyer/readline
+                    </a>
+                  </li>
+              </ul>
+            </div>
+            <div class="WhyGo-reasonLearnMoreLink">
+              <a href="/solutions/clis/">Learn More <i class="material-icons WhyGo-forwardArrowIcon">arrow_forward</i></a>
+            </div>
+          </div>
+        </li>
+        <li class="WhyGo-reason">
+          <div class="WhyGo-reasonDetails">
+            <div class="WhyGo-reasonIcon" role="presentation">
+              <img src="/images/icons/code.svg" alt="Code">
+            </div>
+            <div class="WhyGo-reasonText">
+              <h3 class="WhyGo-reasonTitle">Web Development</h3>
+              <p>
+                With enhanced memory performance and support for several IDEs, Go powers fast and scalable web applications.
+              </p>
+            </div>
+          </div>
+          <div class="WhyGo-reasonFooter">
+            <div class="WhyGo-reasonPackages">
+              <div class="WhyGo-reasonPackagesHeader">
+                <img src="/images/icons/package.svg" alt="Packages.">
+                Popular Packages:
+              </div>
+              <ul class="WhyGo-reasonPackagesList">
+                  <li class="WhyGo-reasonPackage">
+                    <a href="/pkg/net/http/" target="_blank" rel="noopener">
+                      net/http
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="/pkg/html/template/" target="_blank" rel="noopener">
+                      html/template
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/flosch/pongo2" target="_blank" rel="noopener">
+                      flosch/pongo2
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="/pkg/database/sql/" target="_blank" rel="noopener">
+                      database/sql
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/olivere/elastic" target="_blank" rel="noopener">
+                      olivere/elastic
+                    </a>
+                  </li>
+              </ul>
+            </div>
+            <div class="WhyGo-reasonLearnMoreLink">
+              <a href="/solutions/webdev/">Learn More <i class="material-icons WhyGo-forwardArrowIcon">arrow_forward</i></a>
+            </div>
+          </div>
+        </li>
+        <li class="WhyGo-reason">
+          <div class="WhyGo-reasonDetails">
+            <div class="WhyGo-reasonIcon" role="presentation">
+              <img src="/images/icons/gear.svg" alt="Sphere">
+            </div>
+            <div class="WhyGo-reasonText">
+              <h3 class="WhyGo-reasonTitle">DevOps &amp; Site Reliability</h3>
+              <p>
+                With fast build times, lean syntax, an automatic formatter and doc generator, Go is built to support both DevOps and SRE.
+              </p>
+            </div>
+          </div>
+          <div class="WhyGo-reasonFooter">
+            <div class="WhyGo-reasonPackages">
+              <div class="WhyGo-reasonPackagesHeader">
+                <img src="/images/icons/package.svg" alt="Packages.">
+                Popular Packages:
+              </div>
+              <ul class="WhyGo-reasonPackagesList">
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/opentracing/opentracing-go" target="_blank" rel="noopener">
+                      opentracing/opentracing-go
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/istio/istio" target="_blank" rel="noopener">
+                      istio/istio
+                    </a>
+                  </li>
+                  <li class="WhyGo-reasonPackage">
+                    <a href="https://github.com/urfave/cli" target="_blank" rel="noopener">
+                      urfave/cli
+                    </a>
+                  </li>
+              </ul>
+            </div>
+            <div class="WhyGo-reasonLearnMoreLink">
+              <a href="/solutions/devops/">Learn More <i class="material-icons WhyGo-forwardArrowIcon">arrow_forward</i></a>
+            </div>
+          </div>
+        </li>
+        <li class="WhyGo-reason">
+          <div class="WhyGo-reasonShowMore">
+            <div class="WhyGo-reasonShowMoreImgWrapper">
+              <img
+                class="WhyGo-reasonShowMoreImg"
+                loading="lazy"
+                height="148"
+                width="229"
+                src="/images/gophers/biplane.svg"
+                alt="Go Gopher is skateboarding.">
+            </div>
+            <div class="WhyGo-reasonShowMoreLink">
+              <a href="/solutions/#use-cases">More use cases <i
+              class="material-icons
+              WhyGo-forwardArrowIcon">arrow_forward</i></a>
+            </div>
+          </div>
+        </li>
+    </ul>
+  </div>
+</section>
+<section class="LearnGo">
+  <div class="GoCarousel" id="LearnGo-carousel">
+    <div class="GoCarousel-controlsContainer">
+      <div class="GoCarousel-eventsWrapper">
+        <ul class="js-goCarouselEventsSlides GoCarousel-eventsSlides">
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide0">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/2/8/1/thumb_453660641.jpeg"
+                    alt="Book Club &gt; Get Programming With Go group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/EUG-Go/events/ntqdrsydcdbvb">Book Club &gt; Get Programming With Go</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 16, 2022 | Eugene, OR USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/EUG-Go/events/ntqdrsydcdbvb">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide1">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/meetup-group-fuSlbVYy/events/283753302">Feeling Fuzzy</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 16, 2022 | Jacksonville, FL USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/meetup-group-fuSlbVYy/events/283753302">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide2">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/9/7/c/4/thumb_441638852.jpeg"
+                    alt="Feeling Fuzzy group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/OrlanGo/events/283837982">Feeling Fuzzy</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 16, 2022 | Orlando, FL USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/OrlanGo/events/283837982">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide3">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/7/f/7/thumb_433982039.jpeg"
+                    alt="Golang Reston Monthly Meetup group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Golang-Reston/events/cblrmsydcdbvb">Golang Reston Monthly Meetup</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 16, 2022 | Reston, VA USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Golang-Reston/events/cblrmsydcdbvb">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide4">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Omaha-Gophers/events/283242275">Virtual Meetup: Generics and Embed</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 17, 2022 | Omaha, NE USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Omaha-Gophers/events/283242275">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide5">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/5/2/1/5/thumb_485661013.jpeg"
+                    alt="Baltimore Go Online Monthly Meeting group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/BaltimoreGolang/events/nzhfssydcdbwb">Baltimore Go Online Monthly Meeting</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 17, 2022 | Baltimore, MD USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/BaltimoreGolang/events/nzhfssydcdbwb">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide6">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/4/a/e/f/thumb_460759183.jpeg"
+                    alt="Boulder Monthly Go Meetup group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Boulder-Gophers/events/rbjqgrydcdbwb">Boulder Monthly Go Meetup</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 17, 2022 | Boulder, CO USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Boulder-Gophers/events/rbjqgrydcdbwb">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide7">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/b/9/a/b/thumb_456647531.jpeg"
+                    alt="Go Bangalore Meetup 66 group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Golang-Bangalore/events/283962347">Go Bangalore Meetup 66</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 19, 2022 | Bangalore,  India</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Golang-Bangalore/events/283962347">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide8">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Nairobi-Gophers/events/283534525">Creating And Validating JWT RSA Token</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 19, 2022 | Nairobi,  Kenya</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Nairobi-Gophers/events/283534525">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide9">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/3/3/e/0/thumb_459373280.jpeg"
+                    alt="Go Language Usergroup Graz group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Graz-Open-Source-Meetup/events/twfzrsydcdbcc">Go Language Usergroup Graz</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 21, 2022 | Graz,  Austria</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Graz-Open-Source-Meetup/events/twfzrsydcdbcc">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide10">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Golang-Dorset/events/mspblsydcdbcc">Golang Dorset Monthly Meetup</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 21, 2022 | Bournemouth,  United Kingdom</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Golang-Dorset/events/mspblsydcdbcc">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide11">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Leipzig-Golang/events/282941887">Leipzig Golang Meetup #25</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 22, 2022 | Leipzig,  Germany</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Leipzig-Golang/events/282941887">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide12">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Golang-North-East/events/mzwncsydcdbdc">York social: combined event with GoSheffield </a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 22, 2022 | Newcastle Upon Tyne,  United Kingdom</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Golang-North-East/events/mzwncsydcdbdc">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide13">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="/images/meetup.svg"
+                    alt="meetup logo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/bostongo/events/283772394">Virtual Go 1.18 party! (and anything else in Go that people want to talk about)</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 22, 2022 | Boston, MA USA</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/bostongo/events/283772394">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+            <li
+            class="GoCarousel-eventGroup"
+            id="event_slide14">
+              <div class="GoCarousel-eventThumbnail">
+                  <img
+                    loading="lazy"
+                    src="https://secure.meetupstatic.com/photos/event/e/2/f/f/thumb_457978111.jpeg"
+                    alt="2022 Feb Meetup group photo">
+              </div>
+              <div class="GoCarousel-eventBody">
+                <div class="GoCarousel-eventText">
+                  <div class="GoCarousel-eventHeader">Upcoming Events</div>
+                  <h4 class="GoCarousel-eventName">
+                    <a href="https://www.meetup.com/Women-Who-Go-London/events/283558041">2022 Feb Meetup</a>
+                  </h4>
+                  <div class="GoCarousel-eventDate">
+                    <p>Feb 23, 2022 | London,  United Kingdom</p>
+                  </div>
+                  <p class="GoCarousel-viewMore"><a href="https://www.meetup.com/Women-Who-Go-London/events/283558041">Learn more</a></p>
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+      <button class="js-eventsCarouselPrev GoCarousel-controlPrev" hidden>
+        <i class="GoCarousel-icon material-icons">navigate_before</i>
+      </button>
+      <button class="js-eventsCarouselNext GoCarousel-controlNext">
+        <i class="GoCarousel-icon material-icons">navigate_next</i>
+      </button>
+    </div>
+  </div>
+</section>
+<section class="GettingStartedGo">
+  <div class="GettingStartedGo-gridContainer">
+    <div class="GettingStartedGo-header">
+      <h2 class="GettingStartedGo-headerH2">Get started with Go</h2>
+      <p class="GettingStartedGo-headerDesc">
+        Explore a wealth of learning resources, including guided journeys, courses, books, and more.
+      </p>
+      <div class="GettingStartedGo-ctas">
+        <a class="GettingStartedGo-primaryCta" href="/learn/">Get Started</a>
+        <a href="/dl" target="_blank" rel="noopener">Download Go</a>
+      </div>
+    </div>
+    <div class="GettingStartedGo-resourcesSection">
+      <ul class="GettingStartedGo-resourcesList">
+        <li class="GettingStartedGo-resourcesHeader">
+          Resources to start on your own
+        </li>
+        <li class="GettingStartedGo-resourceItem">
+          <a href="/learn#guided-learning-journeys" class="GettingStartedGo-resourceItemTitle">
+            Guided learning journeys
+          </a>
+          <div class="GettingStartedGo-resourceItemDescription">
+            Step-by-step tutorials to get your feet wet
+          </div>
+        </li>
+        <li class="GettingStartedGo-resourceItem">
+          <a href="/learn#online-learning" class="GettingStartedGo-resourceItemTitle">
+            Online learning
+          </a>
+          <div class="GettingStartedGo-resourceItemDescription">
+            Browse resources and learn at your own pace
+          </div>
+        </li>
+        <li class="GettingStartedGo-resourceItem">
+          <a href="/learn#featured-books" class="GettingStartedGo-resourceItemTitle">
+            Featured books
+          </a>
+          <div class="GettingStartedGo-resourceItemDescription">
+            Read through structured chapters and theories
+          </div>
+        </li>
+        <li class="GettingStartedGo-resourceItem">
+          <a href="/learn#self-paced-labs" class="GettingStartedGo-resourceItemTitle">
+            Cloud Self-paced labs
+          </a>
+          <div class="GettingStartedGo-resourceItemDescription">
+            Jump in to deploying Go apps on GCP
+          </div>
+        </li>
+      </ul>
+      <ul class="GettingStartedGo-resourcesList">
+        <li class="GettingStartedGo-resourcesHeader">
+          In-Person Trainings
+        </li>
+          <li class="GettingStartedGo-resourceItem">
+            <a href="https://www.ardanlabs.com/" class="GettingStartedGo-resourceItemTitle">
+              Ardan Labs
+            </a>
+            <div class="GettingStartedGo-resourceItemDescription">
+              Offering customized on-site live training classes.
+            </div>
+          </li>
+          <li class="GettingStartedGo-resourceItem">
+            <a href="https://www.gopherguides.com/" class="GettingStartedGo-resourceItemTitle">
+              Gopher Guides
+            </a>
+            <div class="GettingStartedGo-resourceItemDescription">
+              Customized In-person, remote, and online training classes. Training for Developers by Developers.
+            </div>
+          </li>
+          <li class="GettingStartedGo-resourceItem">
+            <a href="https://bosssauce.it/services/training" class="GettingStartedGo-resourceItemTitle">
+              Boss Sauce Creative
+            </a>
+            <div class="GettingStartedGo-resourceItemDescription">
+              Personalized or track-based Go training for teams.
+            </div>
+          </li>
+          <li class="GettingStartedGo-resourceItem">
+            <a href="https://github.com/shijuvar/gokit/tree/master/training" class="GettingStartedGo-resourceItemTitle">
+              Shiju Varghese
+            </a>
+            <div class="GettingStartedGo-resourceItemDescription">
+              On-site classroom training on Go and consulting on distributed systems architectures, in India.
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<script src="/js/index.js" defer></script>
+
+</main>
+<footer class="Site-footer">
+  <div class="Footer">
+    <div class="Container">
+      <div class="Footer-links">
+          <div class="Footer-linkColumn">
+            <a href="/solutions/" class="Footer-link Footer-link--primary">
+              Why Go
+            </a>
+              <a href="/solutions/#use-cases" class="Footer-link">
+                Use Cases
+              </a>
+              <a href="/solutions/#case-studies" class="Footer-link">
+                Case Studies
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/learn/" class="Footer-link Footer-link--primary">
+              Get Started
+            </a>
+              <a href="/play" class="Footer-link">
+                Playground
+              </a>
+              <a href="/tour/" class="Footer-link">
+                Tour
+              </a>
+              <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="Footer-link">
+                Stack Overflow
+              </a>
+              <a href="/help/" class="Footer-link">
+                Help
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="https://pkg.go.dev" class="Footer-link Footer-link--primary">
+              Packages
+            </a>
+              <a href="/pkg/" class="Footer-link">
+                Standard Library
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/project" class="Footer-link Footer-link--primary">
+              About
+            </a>
+              <a href="/dl/" class="Footer-link">
+                Download
+              </a>
+              <a href="/blog/" class="Footer-link">
+                Blog
+              </a>
+              <a href="https://github.com/golang/go/issues" class="Footer-link">
+                Issue Tracker
+              </a>
+              <a href="/doc/devel/release" class="Footer-link">
+                Release Notes
+              </a>
+              <a href="https://blog.golang.org/go-brand" class="Footer-link">
+                Brand Guidelines
+              </a>
+              <a href="/conduct" class="Footer-link">
+                Code of Conduct
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="https://www.twitter.com/golang" class="Footer-link Footer-link--primary">
+              Connect
+            </a>
+              <a href="https://www.twitter.com/golang" class="Footer-link">
+                Twitter
+              </a>
+              <a href="https://github.com/golang" class="Footer-link">
+                GitHub
+              </a>
+              <a href="https://invite.slack.golangbridge.org/" class="Footer-link">
+                Slack
+              </a>
+              <a href="https://reddit.com/r/golang" class="Footer-link">
+                r/golang
+              </a>
+              <a href="https://www.meetup.com/pro/go" class="Footer-link">
+                Meetup
+              </a>
+              <a href="https://golangweekly.com/" class="Footer-link">
+                Golang Weekly
+              </a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="Footer">
+    <div class="Container Container--fullBleed">
+      <div class="Footer-bottom">
+        <img class="Footer-gopher" src="/images/gophers/pilot-bust.svg" alt="The Go Gopher">
+        <ul class="Footer-listRow">
+          <li class="Footer-listItem">
+            <a href="/copyright">Copyright</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="/tos">Terms of Service</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="http://www.google.com/intl/en/policies/privacy/"
+              target="_blank"
+              rel="noopener">
+              Privacy Policy
+            </a>
+            </li>
+          <li class="Footer-listItem">
+            <a
+              href="/s/website-issue"
+              target="_blank"
+              rel="noopener"
+              >
+              Report an Issue
+            </a>
+          </li>
+        </ul>
+        <a class="Footer-googleLogo" target="_blank" href="https://google.com" rel="noopener">
+          <img class="Footer-googleLogoImg" src="/images/google-white.png" alt="Google logo">
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/carousels.js"></script>
+  <script src="/js/searchBox.js"></script>
+  <script src="/js/misc.js"></script>
+  <script src="/js/hats.js"></script>
+  <script src="/js/playground.js"></script>
+  <script src="/js/godocs.js"></script>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      <meta name="description" content="Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.">
+    
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00027-pob" rel="stylesheet">
+    
+      <title>pkg.go.dev</title>
+    
+    
+  <link href="/static/frontend/homepage/homepage.min.css?version=prod-frontend-00027-pob" rel="stylesheet">
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src) {
+        let s = document.createElement('script');
+        s.src = src;
+        s.type = 'module';
+        s.async = true;
+        s.defer = true
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js")
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/solutions/" data-gtmc="nav link">Why Go</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Get Started</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://golang.org/doc/" data-gtmc="nav link">Docs</a>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://play.golang.org/" data-gtmc="nav link">Play</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/blog/" data-gtmc="nav link">Blog</a>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav>
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/" tabindex="-1">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/solutions/" tabindex="-1">Why Go</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/" tabindex="-1">Get Started</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://golang.org/doc/" tabindex="-1">Docs</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/" tabindex="-1">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://play.golang.org/" tabindex="-1">Play</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/blog" tabindex="-1">Blog</a>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Container">
+    <div class="go-Content go-Content--center">
+      <img class="Homepage-logo" width="700" height="300"
+          src="/static/shared/gopher/package-search-700x300.jpeg" alt="Cartoon gopher typing">
+      <form class="go-InputGroup Homepage-search Homepage-search--symbol"
+          action="/search" role="search" data-gtmc="homepage search form"
+          aria-label="Search for a Package">
+        <input
+          class="go-Input js-searchFocus"
+          data-test-id="homepage-search"
+          id="AutoComplete"
+          role="textbox"
+          aria-label="Search packages or symbols"
+          type="search"
+          name="q"
+          placeholder="Search packages or symbols"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          title="Search packages or symbols"
+          autofocus="true">
+        <button type="submit" class="go-Button">Search</button>
+      </form>
+      <section class="go-Carousel Homepage-tips js-carousel" aria-label="Search Tips Carousel" data-slide-index="2">
+	<ul>
+	  
+	    <li class="go-Carousel-slide" aria-hidden>
+	      <p>
+		<strong>Tip:</strong> Search for a package, for example
+		<a href="/search?q=http">“http”</a> or
+		<a href="/search?q=command">“command”</a>.
+		<a href="/search-help" target="_blank" rel="noopener" class="Homepage-helpLink">
+		  Search help <span><img width="24" height="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt=""></span>
+		</a>
+	      </p>
+	    </li>
+	  
+	    <li class="go-Carousel-slide" aria-hidden>
+	      <p>
+		<strong>Tip:</strong> Search for a symbol, for example
+		<a href="/search?q=Unmarshal">“Unmarshal”</a> or
+		<a href="/search?q=io.Reader">“io.Reader”</a>.
+		<a href="/search-help" target="_blank" rel="noopener" class="Homepage-helpLink">
+		  Search help <span><img width="24" height="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt=""></span>
+		</a>
+	      </p>
+	    </li>
+	  
+	    <li class="go-Carousel-slide" >
+	      <p>
+		<strong>Tip:</strong> Search for symbols within a package using the # filter. For example
+		<a href="/search?q=golang.org%2fx%20%23error">“golang.org/x #error”</a> or
+		<a href="/search?q=%23reader%20io">“#reader io”</a>.
+		<a href="/search-help" target="_blank" rel="noopener" class="Homepage-helpLink">
+		  Search help <span><img width="24" height="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt=""></span>
+		</a>
+	      </p>
+	    </li>
+	  
+	</ul>
+      </section>
+    </div>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+  <div class="Questions">
+    <div class="Questions-content">
+      <div class="Questions-header">Frequently asked questions:</div>
+      <ul>
+        <li><a href="https://go.dev/about#adding-a-package">How can I add a package?</a></li>
+        <li><a href="https://go.dev/about#removing-a-package">How can I remove a package?</a></li>
+        <li><a href="https://go.dev/about#creating-a-badge">How can I add a go badge in my README file?</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://blog.golang.org/go-brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Toggle theme">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+          </button>
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Open shorcuts modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  </body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="go-import" content="gopl.io git https://github.com/adonovan/gopl.io"></meta>
+  <title>The Go Programming Language</title>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68781809-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+.bio {
+	font-size:	95%;
+	text-align:	justify;
+}
+.biblio {
+	margin:		0.5em;
+	font-size:	110%;
+	line-height:	130%;
+}
+.center {
+	text-align:	center;
+}
+td {
+	padding:	0.5em 1em 0.5em 1em;
+	vertical-align: top;
+}
+#toc h1 {
+	font-size:	95%;
+	font-weight:    normal;
+}
+hr {
+	border:		0;
+	border-top:	thin solid #ccc
+}
+  </style>
+</head>
+<body>
+<table><tr>
+<td>
+  <a href='http://www.informit.com/store/go-programming-language-9780134190440'><img border='1' src="cover.png" height='600'/></a>
+  <br/>
+  <div style='text-align: center'>
+  <a href='http://www.amazon.com/dp/0134190440'><img border='0' width='150' src="buyfromamazon.png"/></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href='http://www.informit.com/store/go-programming-language-9780134190440'/><img border='0' height='26' src="informit.png"/></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href='http://www.barnesandnoble.com/w/1121601944'><img border='0' width='150' src="barnesnoble.png"/></a>
+  </div>
+</br>
+</td>
+<td width='500'>
+<h1 class='center'>The Go Programming Language</h1>
+<p class='biblio center'>
+Alan A. A. Donovan &middot; Brian W. Kernighan<br/>
+Published Oct 26, 2015 in paperback and Nov 20 in e-book<br/>
+Addison-Wesley; 380pp; ISBN:&nbsp;978-0134190440<br/>
+<tt>authors</tt><tt>&#0064;</tt><tt>gopl.io</tt>
+</p>
+
+<!-- Table of Contents -->
+<div id='toc'>
+<table><tr>
+<td>
+<h1>Contents [<a href='ch1.pdf'/>PDF</a>]</h1>
+<h1>Preface  [<a href='ch1.pdf'/>PDF</a>]</h1>
+<h1>1. Tutorial [<a href='ch1.pdf'/>PDF</a>]</h1>
+<h1>2. Program Structure</h1>
+<h1>3. Basic Data Types</h1>
+<h1>4. Composite Types</h1>
+<h1>5. Functions</h1>
+<h1>6. Methods</h1>
+</td>
+<td>
+<h1>7. Interfaces</h1>
+<h1>8. Goroutines and Channels</h1>
+<h1>9. Concurrency with Shared Variables</h1>
+<h1>10. Packages and the Go Tool</h1>
+<h1>11. Testing</h1>
+<h1>12. Reflection</h1>
+<h1>13. Low-Level Programming</h1>
+<h1>Index  [<a href='ch1.pdf'/>PDF</a>]</h1>
+</td>
+</tr>
+<tr>
+<td colspan='2'>
+<h1>
+  <a href='https://github.com/adonovan/gopl.io/'>Source code</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href='reviews.html'>Reviews</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href='translations.html'>Translations</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href='errata.html'>Errata</a>
+</h1>
+</td>
+</tr>
+</table>
+</div>
+
+<p class="bio">
+Alan Donovan is a Staff Engineer in Google's infrastructure division,
+specializing in software development tools.  Since 2012, he has been
+working on the Go team, designing libraries and tools for static
+analysis.  He is the author of the
+<a href='http://golang.org/s/oracle-user-manual'><code>oracle</code></a>,
+<a href='http://golang.org/lib/godoc/analysis/help.html'><code>godoc -analysis</code></a>,
+<a href='https://github.com/golang/tools/blob/master/refactor/eg/eg.go'><code>eg</code></a>,
+and <a href='https://github.com/golang/tools/blob/master/refactor/rename/rename.go'><code>gorename</code></a> tools.
+</p> 
+
+<p class="bio">
+Brian Kernighan was in the Computing Science Research center at Bell
+Labs until 2000, where he worked on languages and tools for Unix.  He
+is now a professor in the Computer Science Department at Princeton.
+He is the co-author of several books, including
+<a href='http://www.amazon.com/dp/0131103628?tracking_id=disfordig-20'>The C Programming Language</a> and
+<a href='http://www.amazon.com/dp/020161586X?tracking_id=disfordig-20'>The Practice of Programming</a>.
+
+</td>
+</tr></table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="referer" content="origin-when-cross-origin"/>
+  <!-- Google Tag Manager -->
+  <script>
+  dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    "lifecycle_stage": "",
+  	"logged-in":  false,
+  });
+  </script>
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5P2THV');</script>
+  <!-- End Google Tag Manager --><script type="text/javascript">window.mixpanel={track:function(a,b,cb){if(typeof cb == "function"){window.setTimeout(function(){cb()},1)}}};</script><meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,100,200,300,400,600|Roboto+Slab:400,700|Lato:100,200,300,400,700|Roboto:100,200,300,400,700" rel="stylesheet" type="text/css">
+  <script type="application/json" id="widgetAccess">{}</script>
+  <link href="https://www.alexa.com/alx-sa-c5508c3b-1644008443/css/scssv2/compiled/style.css" media="screen" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/jquery-183.js"></script>
+  <script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/underscore.js"></script>
+  <title>Alexa - Login</title></head>
+<body data-cache-prefix="https://www.alexa.com/alx-sa-c5508c3b-1644008443"  class="  noWidget">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P2THV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->  <div class="body-container">
+    <div class="alx-top">
+      <header id="alx-header" class="alx-header LoggedOut">
+			 <div class="row-fluid AgencyUpsell Hellobar">
+			   <span id='hellobar-text'>We will be retiring Alexa.com on May 1, 2022. For more information, click <a style="color:#fff; text-decoration:none; font-weight:bold;" href="https://support.alexa.com/hc/en-us/articles/4410503838999">here</a>.</span>
+			 </div>				<div class="row-fluid">
+				  <section id="alexa-logo" class="alexa-logo">
+				    <a class="top-nav-link" href="/login" title="Go to home page"><img alt="Alexa logo" src="/images/alexa-logo.png"></a>
+				  </section>
+				  <section class="alexa-menu Desktop pull-right" style="display: inline-block; ">
+				      <a class="Mkbutton Orange navigation  top-nav-link" style="padding-left:20px;padding-right:20px;" href="/login">Log in</a>
+				  </section>
+				</div>      </header>
+      <section id="alx-content" class="alx-content fullWidth">
+        <div class="BigContained Login MinHeight">
+ 
+  <div class="EndofLife">
+    <h3>End of Service Notice</h3>
+    Twenty five years ago we founded Alexa Internet. After more than two decades of helping you find, reach, and convert your digital audience, we will be retiring Alexa.com on May 1, 2022. Thank you for making us your go-to resource for content research, competitive analysis, keyword research, and so much more.
+    <br/><br/>
+    Learn more <a href="https://support.alexa.com/hc/en-us/articles/4410503838999">here</a>.
+  </div>
+  <div class="flex">
+    <section class="Half Box">
+      <div data-replacing="loginSection" style="display:none; background: #f7f7f7;margin: -20px;padding: 20px;">
+        <div class="Header">
+          <img src='/images/register/alexa_acc.png'/>
+          <h3>Log into your Alexa account</h3>
+          <p>Enter your credentials for an existing Alexa account.</p>
+        </div>
+        <div class="Form">
+          <section>
+            <div id="login-errors" class="hide-elem" style="text-align: center;">
+              <div class="note-error Error"></div>
+            </div>
+          
+            <form id="ajax-login-form" class="form-horizontal login-form" action="/login/ajaxex" method="POST">
+              <input type="hidden" name="csrf" value="" />
+              <input type="hidden" name="resource" value="" />
+              <input type="hidden" name="a" value="login" />
+              <div class="control-group">
+                <label class="control-label" for="email">Email</label>
+                <div class="controls">
+                  <span class="form-deletable">
+                    <input type="email" size="30" class="AthinInput" name="email" id="login-email" tabindex="1" value="" placeholder="Email Address" required>
+                    <span class="js-delete-input">&nbsp;</span>
+                  </span>
+                </div>
+              </div>
+              <div class="control-group" style="padding-top: 13px;">
+                <label class="control-label" for="pwd">Password</label>
+                <div class="controls">
+                  <span class="form-deletable">
+                  <input id="pwd" class="AthinInput" type="password" size="30" name="password" tabindex="2" placeholder="Password" required>
+                  <span class="js-delete-input">&nbsp;</span>
+                  </span>
+                </div>
+              </div>
+              <div class="control-group" style="padding-top: 13px;" ></div>
+              <div class="control-group smt" style="padding:15px 0 20px 0; margin-bottom:0; text-align:center;">
+                <div class="centered" >
+                  <input id="submit" class="Mkbutton Darkblue" tabindex="3" type="submit" value="Continue">
+                </div>
+              </div>
+            </form>
+          </section>        </div>
+          <a href="/reset" target="_parent" class="mg-right">Forgot your password?</a>
+        <div class="ALightbox" id="retiredFacebook">
+          <p>We no longer support Login with Facebook on alexa.com. 
+            You can find additional details in this <a href="https://alexa.zendesk.com/hc/en-us/articles/360059070994" target="_blank">FAQ</a>.
+            If you would like to reinstate your subscription, please email <a href="mailto:support@alexa.com?subject=My Alexa.com Facebook account&body=I would like access to my account again.%0D%0A %0D%0A Here is the necessary information:%0D%0A My name%0D%0A%0D%0A1)the last 4 numbers of the credit card I used to setup a subscription on alexa.com %0D%0AOR%0D%0A 2) the Paypal invoice ID for a recent subscription payment.">support@alexa.com</a>.</p>
+        </div>
+      </div>
+      
+      <div data-replaced="loginSection">
+        <img src='/images/register/alexa_acc.png'/>
+        <h4>Alexa account</h4>
+        <p>Click below to log into a Basic, Insight, Essentials, Advanced or Advanced High Traffic account.</p>
+        <span class="Mkbutton Darkblue Replace" for="loginSection">Log in</span>
+      </div>
+      
+    </section>
+    <section class="Half Box">
+      <img src='/images/register/agency_acc.png'/>
+      <h4>Alexa Agency account</h4>
+      <p>Click below to log into an Alexa Agency account.</p>
+      <a class="Mkbutton Darkblue" href="https://hub.alexa.com/login">Log in</a>
+    </section>
+  </div>
+</div>
+<div id="change-password-modal"
+     class="modal hide fade ChangePasswordModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true"
+     style="display: none;"
+     data-backdrop="static">
+  <div class="model-content">
+    <div class="modal-header">
+      <div class="modal-title" style="font-size: 18px;">
+        To ensure the security of your Alexa.com account, we are requiring you to change your password to make it more secure.
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="Form">
+        Please enter your current password, then create and verify your new password.
+        <div id="update-password" class="hide-elem" style="text-align: center;">
+          <div class="note-error Error"></div>
+        </div>
+        <form class="form-horizontal change-password-form" method="POST">
+          <div class="control-group">
+            <label class="control-label" for="password0">Current Password</label>
+            <div class="controls">
+              <span class="form-deletable">
+                <input type="password" size="15" class="AthinInput" name="password0" tabindex=1 value="" required/>
+                <span class="js-delete-input">&nbsp;</span>
+              </span>
+            </div>
+          </div>
+          Your new password must contain 8 or more characters and must be a combination of upper case, lower case, numerical, and special characters (%#&!).
+          <div class="control-group" style="padding-top: 13px;">
+            <label class="control-label" for="password1">New Password</label>
+            <div class="controls">
+              <span class="form-deletable">
+                <input id="pwd" class="AthinInput" type="password" size="15" name="password1" tabindex=2 required/>
+        <span class="js-delete-input">&nbsp;</span>
+        </span>
+            </div>
+          </div>
+          <div class="control-group" style="padding-top: 13px;">
+            <label class="control-label" for="password2">Verify New Password</label>
+            <div class="controls">
+              <span class="form-deletable">
+                <input id="pwd" class="AthinInput" type="password" size="15" name="password2" tabindex=3 required/>
+        <span class="js-delete-input">&nbsp;</span>
+        </span>
+            </div>
+          </div>
+          <div class="control-group" style="padding-top: 13px;">
+            <div class="control-group smt" style="padding:15px 0 20px 0; margin-bottom:0; text-align:center;">
+              <div class="centered">
+                <input id="submit" class="Mkbutton Darkblue" tabindex="4" type="submit" value="Continue">
+              </div>
+            </div>
+            <input type="hidden" name="sessionId"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><script type="text/javascript">
+	$(document).ready(function() {
+		$('#email').focus();
+    });
+</script>
+        <div id="waiting-dialog" class="hide-elem" data-module="dialog-waiting">
+          <div class="text-center">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+          </div>
+        </div>      </section>
+        <footer id="alx-footer" class="alx-footer font-1">
+          <section id="footer-legal" class="footer-legal loggedout">
+          <div class="Contained">
+            <span class="row-fluid">
+              <section id="footer-copy" class="span8 footer-copy">
+              <span>© Alexa Internet, Inc. 1996 - 2022</span><a
+                href="/help/privacy">Privacy</a><a href="/help/terms">Terms</a>
+              <a class="footer-link " href="/contact-us">Contact</a>
+              </section>
+              <section class="mobile-legal">
+                <div class="row-fluid">
+                  <div class="half"><a class="footer-link"
+                      href="/help/privacy">Privacy</a></div>
+                  <div class="half"><a class="footer-link"
+                      href="/help/terms">Terms</a></div>
+                </div>
+                <div class="row-fluid" style="text-align:center; color:#667fa7; padding:10px
+                  0; border-bottom:none;">© Alexa Internet, Inc. 1996 - 2022</div>
+              </section>
+            </span>
+          </div>
+          <div style="clear:both;height:0px"></div>
+          </section>        </footer>
+
+    </div>
+  </div>
+
+
+  <script type="application/json" id="cognito">{"userPoolId":"us-east-1_DrrDrLfb5","clientId":"60c2a9plg21dfrp9sbhec8qi4p","region":"us-east-1"}</script>
+  <script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/URI.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/jquery-ui.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/jquery-ui-touch-punch-023.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/jquery-autocomplete.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/pro/js/ext/jquery-validate-min.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/jquery-cookie-13.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/ext/bootstrap.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/common.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/Alexa.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/alexa-ui.js"></script>
+<script type="text/javascript" src="https://www.alexa.com/alx-sa-c5508c3b-1644008443/js/loginForm.js"></script>
+
+  <script type="text/javascript">
+    A$.isProd = true
+  </script>
+</body>
+</html>
