@@ -1,4 +1,4 @@
-package main
+package xkcd
 
 import (
 	"encoding/json"
@@ -49,29 +49,28 @@ func (RealHttp) Get(url string) (resp *http.Response, err error) { return http.G
 type URLsFetcher struct {
 	File FileIface
 	Http HttpIface
-	outWrite io.Writer
-	errWrite io.Writer
+	OutWrite *os.File
+	ErrWrite *os.File
 }
 
 var ( // default <nil> values
 	DefaultHttp     HttpIface
-	DefaultOutWrite io.Writer
-	DefaultErrWrite io.Writer
+	DefaultOutWrite *os.File
+	DefaultErrWrite *os.File
 	DefaultFile FileIface
 )
 
-func NewURLsFetcher(File FileIface, Http HttpIface, outWrite io.Writer, errWrite io.Writer) *URLsFetcher {
+func NewURLsFetcher(File FileIface, Http HttpIface, outWrite *os.File, errWrite *os.File) *URLsFetcher {
 	fetcher := URLsFetcher{File, Http,  outWrite, errWrite}
 	// notest
-	
 	if Http == DefaultHttp {
 		fetcher.Http = RealHttp{}
 	}
 	if outWrite == DefaultOutWrite {
-		fetcher.outWrite = os.Stdout
+		fetcher.OutWrite = os.Stdout
 	}
 	if errWrite == DefaultErrWrite {
-		fetcher.errWrite = os.Stderr
+		fetcher.ErrWrite = os.Stderr
 	}
 	if File == DefaultFile {
 		fetcher.File = RealFile{}
@@ -171,12 +170,12 @@ func(f *URLsFetcher) CheckAndFill (file *afero.File)(*afero.File){
 	return file
 }
 
-func main() {
-	f := NewURLsFetcher(DefaultFile,DefaultHttp,os.Stdout,os.Stderr)
-	condition := os.Args[1]
-	Fetch(f.ReadFile(condition))
-	PrintData(os.Stdout,condition)
-}
+// func main() {
+// 	f := NewURLsFetcher(DefaultFile,DefaultHttp,os.Stdout,os.Stderr)
+// 	condition := os.Args[1]
+// 	Fetch(f.ReadFile(condition))
+// 	PrintData(os.Stdout,condition)
+// }
 
 func PrintData(thread io.Writer,condition string){
 	for _, elem := range mass {
